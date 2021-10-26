@@ -32,5 +32,5 @@ jobs:
           poetry install
 
       - name: Lint
-        run: ./scripts/lint.sh
+        run: .github/check_lint.sh
 {%- endraw %}
