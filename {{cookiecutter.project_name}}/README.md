@@ -25,7 +25,7 @@ poetry install
 pytest .
 ```
 
-## Formatting Code
+### Formatting Code
 ```shell
 bash .github/format.sh
 ```
