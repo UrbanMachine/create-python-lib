@@ -12,3 +12,20 @@ _________________
 
 [Read Latest Documentation](https://{{cookiecutter.github_org}}.github.io/{{cookiecutter.project_name}}/) - [Browse GitHub Code Repository](https://github.com/{{cookiecutter.github_org}}/{{cookiecutter.project_name}}/)
 _________________
+
+## Development
+
+### Installing python dependencies
+```shell
+poetry install
+```
+
+### Running Tests
+```shell
+pytest .
+```
+
+## Formatting Code
+```shell
+bash .github/format.sh
+```
