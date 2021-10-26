@@ -1,4 +1,5 @@
-{{cookiecutter.project_name}}
+# {{cookiecutter.project_name}}
+{{cookiecutter.description}}
 _________________
 
 [![PyPI version](https://badge.fury.io/py/{{cookiecutter.project_name}}.svg)](http://badge.fury.io/py/{{cookiecutter.project_name}})
@@ -14,5 +15,3 @@ _________________
 
 [Read Latest Documentation](https://{{cookiecutter.github_org}}.github.io/{{cookiecutter.project_name}}/) - [Browse GitHub Code Repository](https://github.com/{{cookiecutter.github_org}}/{{cookiecutter.project_name}}/)
 _________________
-
-**{{cookiecutter.project_name}}** {{cookiecutter.description}}
