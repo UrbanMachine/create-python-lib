@@ -18,3 +18,9 @@ A simple template for my own personal Python3.6+ projects utilizing black + isor
    ```
 4) Copy the generated files into the project directory and add them to git
 5) Merge `template` into the main branch of the repository. Don't delete the `template` branch, so that it can be used in the future for future template changes and merges.
+
+# Updating a template
+1) Go to the projects `template` branch 
+2) Run `cruft update --allow-untracked-files` and follow the prompts.
+3) Validate the diffs merged correctly
+4) Merge `template` into the main branch of the repository
