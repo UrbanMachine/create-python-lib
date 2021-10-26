@@ -22,15 +22,14 @@ A simple template for Urban Machine Python3.8+ projects utilizing black + isort 
    ```
 5) Copy the generated files into the project directory and track them on git
 6) Double check everything is up-to-date by running `cruft check`
-7) Merge `template` into the main branch of the repository. Don't delete the `template` branch, so that it can be used in the future for future template changes and merges.
+7) Merge `template` into the main branch of the repository. 
 
    You may need to use:
    ```shell
    git merge --allow-unrelated-histories
    ```
+8) Delete the `template` branch
    
-# Updating a template on an existsing project
-1) Go to the projects `template` branch 
-2) Run `cruft update --allow-untracked-files` and follow the prompts.
-3) Validate the diffs merged correctly
-4) Merge `template` into the main branch of the repository
+# Updating a template on an existsing project 
+1) Run `cruft update --allow-untracked-files` and follow the prompts.
+2) Resolve merge conflicts
