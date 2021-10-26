@@ -9,36 +9,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: [3.6, 3.7, 3.8]
-        os: [ubuntu-latest, ubuntu-18.04, macos-latest, windows-latest]
+        python-version: [3.8, 3.9]
+        os: [ubuntu-latest, ubuntu-20.04]
 
     steps:
       - uses: actions/checkout@v2
       - name: Ubuntu cache
         uses: actions/cache@v1
-        if: startsWith(matrix.os, 'ubuntu')
         with:
           path: ~/.cache/pip
-          key:
-            ${{ matrix.os }}-${{ matrix.python-version }}-${{ hashFiles('**/pyproject.toml') }}
-          restore-keys: |
-            ${{ matrix.os }}-${{ matrix.python-version }}-
-
-      - name: macOS cache
-        uses: actions/cache@v1
-        if: startsWith(matrix.os, 'macOS')
-        with:
-          path: ~/Library/Caches/pip
-          key:
-            ${{ matrix.os }}-${{ matrix.python-version }}-${{ hashFiles('**/pyproject.toml') }}
-          restore-keys: |
-            ${{ matrix.os }}-${{ matrix.python-version }}-
-
-      - name: Windows cache
-        uses: actions/cache@v1
-        if: startsWith(matrix.os, 'windows')
-        with:
-          path: c:\users\runneradmin\appdata\local\pip\cache
           key:
             ${{ matrix.os }}-${{ matrix.python-version }}-${{ hashFiles('**/pyproject.toml') }}
           restore-keys: |
@@ -61,5 +40,5 @@ jobs:
           poetry run pytest tests/ -s --cov={{cookiecutter.project_name}}/ --cov-report=term-missing ${@-}
           poetry run coverage xml
       - name: Report Coverage
-        if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.8'
+        if: matrix.os == 'ubuntu-20.04' && matrix.python-version == '3.8'
         uses: codecov/codecov-action@v1.0.6
