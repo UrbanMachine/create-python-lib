@@ -16,14 +16,19 @@ A simple template for Urban Machine Python3.8+ projects utilizing black + isort 
    ```shell
    pip install cruft
    ```
-5) Create a cookiecutter repository
+4) Create a cookiecutter repository
    ```shell
    cruft create https://github.com/urbanmachine/cookiecutter-python/
    ```
-6) Copy the generated files into the project directory and track them on git
-7) Double check everything is up-to-date by running `cruft check`
-8) Merge `template` into the main branch of the repository. Don't delete the `template` branch, so that it can be used in the future for future template changes and merges.
+5) Copy the generated files into the project directory and track them on git
+6) Double check everything is up-to-date by running `cruft check`
+7) Merge `template` into the main branch of the repository. Don't delete the `template` branch, so that it can be used in the future for future template changes and merges.
 
+   You may need to use:
+   ```shell
+   git merge --allow-unrelated-histories
+   ```
+   
 # Updating a template on an existsing project
 1) Go to the projects `template` branch 
 2) Run `cruft update --allow-untracked-files` and follow the prompts.
