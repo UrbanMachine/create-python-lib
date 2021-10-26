@@ -3,7 +3,7 @@ name = "{{cookiecutter.project_name}}"
 version = "{{cookiecutter.version}}"
 description = "{{cookiecutter.description}}"
 authors = ["{{cookiecutter.github_org}} <{{cookiecutter.email}}>"]
-license = "MIT"
+license = "Proprietary"
 readme = "README.md"
 
 [tool.poetry.dependencies]
