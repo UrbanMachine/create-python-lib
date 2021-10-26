@@ -29,3 +29,8 @@ pytest .
 ```shell
 bash .github/format.sh
 ```
+
+### Linting
+```shell
+bash .github/check_lint.sh
+```
