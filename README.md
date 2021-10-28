@@ -33,3 +33,10 @@ A simple template for Urban Machine Python3.8+ projects utilizing black + isort 
 # Updating a template on an existsing project 
 1) Run `cruft update --allow-untracked-files` and follow the prompts.
 2) Resolve merge conflicts
+
+# Adding Codecov Support
+This process requires being an Admin on the github org.
+1) Go to [Codecov][https://about.codecov.io/sign-up/] and sign in with your Github.
+2) Go to the repository you wish to add, and select 'Activate'. 
+3) Go to https://github.com/UrbanMachine/PROJECT_NAME/settings/secrets/actions, and create a new secret called `CODECOV_TOKEN`. Paste the token that is given under the "Overview" tab of https://app.codecov.io/gh/UrbanMachine/PROJECT_NAME/ as the value.
+4) You should now be able to see code coverage under codecov!
