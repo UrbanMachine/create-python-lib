@@ -36,13 +36,13 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install --upgrade poetry
           poetry install
+{%- endraw %}
       - name: Test
         shell: bash
         run: |
-{%- endraw %}
           poetry run pytest tests/ -s --cov={{cookiecutter.project_name}}/ --cov-report=term-missing ${@-}
-{% raw -%}
           poetry run coverage xml
+{% raw -%}
       - name: Report Coverage
         if: matrix.os == 'ubuntu-20.04' && matrix.python-version == '3.8'
         uses: codecov/codecov-action@v2.1.0
