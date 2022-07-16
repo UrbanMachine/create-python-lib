@@ -18,7 +18,7 @@ A simple template for Urban Machine Python3.8+ projects utilizing black + isort 
    ```
 4) Create a cookiecutter repository
    ```shell
-   cruft create https://github.com/urbanmachine/cookiecutter-python/
+   cruft create git@github.com:UrbanMachine/cookiecutter-python-template.git
    ```
 5) Copy the generated files into the project directory and track them on git
 6) Double check everything is up-to-date by running `cruft check`
