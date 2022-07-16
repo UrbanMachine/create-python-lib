@@ -7,5 +7,5 @@ poetry run isort --check --diff {{cookiecutter.project_name}}/ tests/
 poetry run black --check {{cookiecutter.project_name}}/ tests/
 poetry run flake8 {{cookiecutter.project_name}}/ tests/
 poetry run bandit -r {{cookiecutter.project_name}}/
-poetry run vulture
+poetry run vulture {{cookiecutter.project_name}}/
 echo "Lint successful!"
