@@ -40,3 +40,12 @@ This process requires being an Admin on the github org.
 2) Go to the repository you wish to add, and select 'Activate'. 
 3) Go to https://github.com/UrbanMachine/PROJECT_NAME/settings/secrets/actions, and create a new secret called `CODECOV_TOKEN`. Paste the token that is given under the "Overview" tab of https://app.codecov.io/gh/UrbanMachine/PROJECT_NAME/ as the value.
 4) You should now be able to see code coverage under codecov!
+
+# Getting the `lint` action to work
+By default, the lint action will fail because `cruft` will be unable to clone the template 
+repository. To fix this:
+
+1) Generate a new private SSH key using `ssh-keygen`
+2) Go to https://github.com/UrbanMachine/PROJECT_NAME/settings/secrets/actions, 
+3) Create a new secret called `SSH_KEY`
+4) Store the new private key under the `SSH_KEY` secret
