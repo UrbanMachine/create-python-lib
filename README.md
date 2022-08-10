@@ -46,6 +46,5 @@ By default, the lint action will fail because `cruft` will be unable to clone th
 repository. To fix this:
 
 1) Generate a new private SSH key using `ssh-keygen`
-2) Go to https://github.com/UrbanMachine/PROJECT_NAME/settings/secrets/actions, 
-3) Create a new secret called `SSH_KEY`
-4) Store the new private key under the `SSH_KEY` secret
+2) Go to https://github.com/UrbanMachine/PROJECT_NAME/settings/secrets/actions, create a new secret called `SSH_KEY`, and store the `id_rsa` file there.
+3) Go to https://github.com/UrbanMachine/PROJECT_NAME/settings/keys, create a new deploy key (name irrelevant), and store the `id_rsa.pub` file there.
