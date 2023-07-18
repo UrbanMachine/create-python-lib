@@ -10,25 +10,31 @@ readme = "README.md"
 python = "^3.8"
 
 [tool.poetry.dev-dependencies]
-darglint = "^1.8.1"
 vulture = "^2.5"
 bandit = "^1.7"
 isort = "^5.10"
-flake8-bugbear = "^22.7"
-black = "^22.6"
-mypy = "^0.961"
-pytest = "^7.1"
+pytest = "^7.4.0"
 pytest-cov = "^3.0"
+black = "^23.7.0"
+isort = "^5.10"
+mypy = "^1.4.1"
 pep8-naming = "^0.13.1"
 portray = "^1.7"
 cruft = "^2.10"
 
+# Flake8 plugins
+darglint = "^1.8.1"
+pep8-naming = "^0.13.3"
+flake8-bugbear = "^23.1.20"
+flake8-comprehensions = "^3.10.1"
+flake8-implicit-str-concat = "^0.4.0"
+flake8-use-fstring = "^1.4"
+flake8-use-pathlib = "^0.3.0"
+flake8-noqa = "^1.3.0"
+
 [build-system]
 requires = ["poetry>=0.12"]
 build-backend = "poetry.masonry.api"
-
-[tool.black]
-line-length = 100
 
 [tool.isort]
 profile = "hug"
