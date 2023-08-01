@@ -35,7 +35,7 @@ requires = ["poetry>=0.12"]
 build-backend = "poetry.masonry.api"
 
 [tool.isort]
-profile = "hug"
+profile = "black"
 
 [tool.mypy]
 strict = true
