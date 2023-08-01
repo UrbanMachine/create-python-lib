@@ -12,13 +12,11 @@ python = "^3.8"
 [tool.poetry.dev-dependencies]
 vulture = "^2.5"
 bandit = "^1.7"
-isort = "^5.10"
 pytest = "^7.4.0"
 pytest-cov = "^3.0"
 black = "^23.7.0"
 isort = "^5.10"
 mypy = "^1.4.1"
-pep8-naming = "^0.13.1"
 portray = "^1.7"
 cruft = "^2.10"
 
