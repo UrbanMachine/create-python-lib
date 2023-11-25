@@ -1,6 +1,6 @@
 # cookiecutter-python-template
 
-A simple template for Urban Machine Python3.8+ projects utilizing black + isort + flake8 + poetry + mypy + bandit + bugbear + more goodness. Best used with [cruft](https://timothycrosley.github.io/cruft/)
+A simple template for Urban Machine Python3.9+ projects utilizing black + isort + flake8 + poetry + mypy + bandit + bugbear + more goodness. Best used with [cruft](https://timothycrosley.github.io/cruft/)
 
 # Adding template to an existing project
 
