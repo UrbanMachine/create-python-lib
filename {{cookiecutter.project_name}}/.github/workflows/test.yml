@@ -9,7 +9,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: [3.8, 3.9]
+        python-version: [3.9, 3.10]
         os: [ubuntu-latest, ubuntu-20.04]
 
     steps:
@@ -36,6 +36,7 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install --upgrade poetry
           poetry install
+
 {%- endraw %}
       - name: Test
         shell: bash
@@ -43,6 +44,7 @@ jobs:
           poetry run pytest tests/ -s --cov={{cookiecutter.project_name}}/ --cov-report=term-missing ${@-}
           poetry run coverage xml
 {% raw -%}
+
       - name: Report Coverage
         if: matrix.os == 'ubuntu-20.04' && matrix.python-version == '3.8'
         uses: codecov/codecov-action@v2.1.0
