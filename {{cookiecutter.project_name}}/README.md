@@ -27,10 +27,10 @@ pytest .
 
 ### Formatting Code
 ```shell
-bash .github/format.sh
+bash .github/format
 ```
 
 ### Linting
 ```shell
-bash .github/check_lint.sh
+bash .github/check_lint
 ```
