@@ -1,4 +1,5 @@
 #!/bin/bash
+# This script runs the full check suite, without any automatic fixes
 set -euxo pipefail
 
 poetry run ruff check --no-fix
