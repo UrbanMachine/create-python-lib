@@ -8,6 +8,6 @@ poetry run mypy --ignore-missing-imports {{cookiecutter.project_name}}/ tests/
 poetry run darglint \
   --strictness short \
   --docstring-style sphinx \
-  --ignore-regexp '^test_.*'
+  --ignore-regex '^test_.*'
 poetry run cruft check
 echo "Lint successful!"
