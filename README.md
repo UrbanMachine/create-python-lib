@@ -23,6 +23,10 @@ This template helps streamline development by ensuring that every new Python pro
 
 ### Adding the Template to an Existing Project
 
+If you have an existing git repository and you want it to follow this template, 
+use these instructions, start from **Step 1**. If you are starting a new project,
+start from **Step 3**.
+
 1. **Create a `template` branch:**
    ```shell
    git checkout --orphan template 
@@ -32,10 +36,16 @@ This template helps streamline development by ensuring that every new Python pro
    git reset --hard 
    ```
 3. Install Cruft (if not already installed):
+
+   This tool allows you to create projects from 'cookiecutter' repositories, such as this one. 
    ```shell
    pip install cruft
    ```
-4. Initialize the template
+4. Initialize the template. This will create a new directory where the project files will
+   be dumped.
+   
+   Fill in the form with the appropriate values for your project. The values in the 
+   parameters are the default values that will be used if you don't fill in your own.
    ```shell
    cruft create git@github.com:UrbanMachine/create-python-lib.git
    ```
@@ -48,7 +58,7 @@ This template helps streamline development by ensuring that every new Python pro
 
    You may need to use:
    ```shell
-   git merge --allow-unrelated-histories
+   git merge --allow-unrelated-histories template main
    ```
 8. Delete the `template` branch
    
@@ -69,18 +79,10 @@ poetry lock
 
 Then commit the `pyproject.lock` file to the repository.
 
-### Adding Codecov Support
-This process requires being an Admin on the github org.
-1. Sign in to [Codecov](https://about.codecov.io/sign-up/) with your Github account.
-2. Under your repository in Codecov, select "Activate".
-3. Get a codecov API token. Settings can be found under:
-   https://app.codecov.io/gh/UrbanMachine/PROJECT_NAME/
-4. Add a secret named `CODECOV_TOKEN` to your Github repositories secrets. Settings can be found under: 
-   https://github.com/UrbanMachine/PROJECT_NAME/settings/secrets/actions
-6. You should now be able to see code coverage under codecov!
-
 ### Fixing the `lint` Github Action
-`cruft` requires access to the upstream template repository for `lint` to function. If not
+This template automatically runs CI via github actions on every pull request. 
+
+The CI uses cruft to check if there's been upstream changes on the template repository. If not
 fixed, the lint action will fail because because `cruft` is unable to clone the template repo. 
 Set up SSH keys as follows:
 
@@ -89,7 +91,20 @@ Set up SSH keys as follows:
    ssh-keygen
    ```
 2. Add the private key (`id_rsa`) to your Github repository's sectrets under the name `SSH_KEY`. Settings can be found under: 
-   https://github.com/UrbanMachine/PROJECT_NAME/settings/secrets/actions
+   https://github.com/GITHUB_ORG/PROJECT_NAME/settings/secrets/actions
 
 3. Add a public key (`id_rsa.pub`) to your repository's deploy keys on github. Settings can be found under: 
-   https://github.com/UrbanMachine/PROJECT_NAME/settings/keys
+   https://github.com/GITHUB_ORG/PROJECT_NAME/settings/keys
+
+
+### Optional: Adding Codecov Support
+Codecov let's your project report on test coverage on every pull request. This process requires being an Admin on the github org this project lives in.
+
+1. Sign in to [Codecov](https://about.codecov.io/sign-up/) with your Github account.
+2. Under your repository in Codecov, select "Activate".
+3. Get a codecov API token. Settings can be found under:
+   https://app.codecov.io/gh/GITHUB_ORG/PROJECT_NAME/
+4. Add a secret named `CODECOV_TOKEN` to your Github repositories secrets. Settings can be found under: 
+   https://github.com/GITHUB_ORG/PROJECT_NAME/settings/secrets/actions
+6. You should now be able to see code coverage under codecov!
+
