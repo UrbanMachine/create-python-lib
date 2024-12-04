@@ -47,7 +47,7 @@ start from **Step 3**.
    Fill in the form with the appropriate values for your project. The values in the 
    parameters are the default values that will be used if you don't fill in your own.
    ```shell
-   cruft create git@github.com:UrbanMachine/create-python-lib.git
+   cruft create https://github.com/UrbanMachine/create-python-lib.git
    ```
 5. Add the generated files into the project directory and commit them to git.
 6. Check that everything is synced with the template repository
@@ -82,9 +82,26 @@ Then commit the `pyproject.lock` file to the repository.
 ### Fixing the `lint` Github Action
 This template automatically runs CI via github actions on every pull request. 
 
-The CI uses cruft to check if there's been upstream changes on the template repository. If not
-fixed, the lint action will fail because because `cruft` is unable to clone the template repo. 
-Set up SSH keys as follows:
+The CI uses cruft to check if there's been upstream changes on the template repository.
+Depending on how you clone the repository, you might get the following error:
+
+```shell
+╭─ Error ──────────────────────────────────────────────────────────────────────╮
+│ Unable to initialize the cookiecutter using                                  │
+│ git@github.com:UrbanMachine/create-ros-app.git! Failed to clone the repo.    │
+│ stderr: 'Cloning into '/tmp/tmpavykj68r'...                                  │
+│ git@github.com: Permission denied (publickey).                               │
+│ fatal: Could not read from remote repository.                                │
+│                                                                              │
+│ Please make sure you have the correct access rights                          │
+│ and the repository exists.                                                   │
+│ '                                                                            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+```
+
+If you do, it's because github actions is trying to use SSH to clone the template repo, 
+and failing. To fix this, edit your `.cruft.json` `template` key so it points to the
+repository using `https://...your-url...git`
 
 1. Generate an SSH Key
    ```shell
